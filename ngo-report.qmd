@@ -30,11 +30,20 @@ file <- "data-raw/gapminder.tsv"
 gapminder <- read_tsv(file)
 ```
 
+```{r}
+#| label: extract-summary
+# extract values for inline reporting
+n_years <- length(unique(gapminder$year))
+min_year <- min(gapminder$year)
+max_year <- max(gapminder$year)
+n_counties <- length(unique(gapminder$country))
+```
+
 # Methods
 
-We took per capita GDP and life expectancy data from 12 years (from 1952
-to 2007) for each of 142 countries. Analysis was carried out with R and
-tidyverse packages.
+We took per capita GDP and life expectancy data from `r n_years` years
+(from `r min_year` to `r max_year`) for each of `r n_counties`
+countries. Analysis was carried out with R and tidyverse packages.
 
 # Results
 
