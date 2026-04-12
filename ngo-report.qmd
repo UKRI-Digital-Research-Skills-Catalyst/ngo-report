@@ -4,6 +4,12 @@ author: "Emma Rand"
 engine: knitr
 format:
   html
+execute:
+  echo: false
+  include: true
+  error: false
+  message: false
+  warning: false
 ---
 
 ## Quarto
