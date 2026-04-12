@@ -1,5 +1,9 @@
 ---
-title: "ngo-report"
+title: "The relationship between Gross Domestic Product per capita and Life Expectancy."
+author: "Emma Rand"
+engine: knitr
+format:
+  html
 ---
 
 ## Quarto
@@ -9,4 +13,8 @@ finished document. To learn more about Quarto see <https://quarto.org>.
 
 ```{r}
 1 + 1
+```
+
+```{r}
+hist(rnorm(100))
 ```
