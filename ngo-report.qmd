@@ -7,20 +7,17 @@ format:
 execute:
   echo: false
   include: true
-  error: true
+  error: false
   message: false
   warning: false
 ---
 
-## Quarto
+# Introduction
 
-Quarto enables you to weave together content and executable code into a
-finished document. To learn more about Quarto see <https://quarto.org>.
+# Methods
 
-```{r}
-1 + 1
-```
+# Results
 
-```{r}
-hist(rnrm(100))
-```
+# Discussion
+
+# References
