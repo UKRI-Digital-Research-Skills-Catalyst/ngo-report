@@ -24,6 +24,12 @@ relationship using the relationship between [Gross Domestic Product
 (GDP)](https://en.wikipedia.org/wiki/Gross_domestic_product) *per
 capita* and Life Expectancy across countries and over time.
 
+```{r}
+#| label: import-data
+file <- "data-raw/gapminder.tsv"
+gapminder <- read_tsv(file)
+```
+
 # Methods
 
 # Results
