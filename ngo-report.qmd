@@ -7,7 +7,7 @@ format:
 execute:
   echo: false
   include: true
-  error: false
+  error: true
   message: false
   warning: false
 ---
@@ -22,5 +22,5 @@ finished document. To learn more about Quarto see <https://quarto.org>.
 ```
 
 ```{r}
-hist(rnorm(100))
+hist(rnrm(100))
 ```
