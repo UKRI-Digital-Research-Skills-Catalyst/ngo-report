@@ -19,6 +19,11 @@ library(tidyverse)
 
 # Introduction
 
+There is a relationship between wealth and health. We will explore this
+relationship using the relationship between [Gross Domestic Product
+(GDP)](https://en.wikipedia.org/wiki/Gross_domestic_product) *per
+capita* and Life Expectancy across countries and over time.
+
 # Methods
 
 # Results
