@@ -32,6 +32,10 @@ gapminder <- read_tsv(file)
 
 # Methods
 
+We took per capita GDP and life expectancy data from 12 years (from 1952
+to 2007) for each of 142 countries. Analysis was carried out with R and
+tidyverse packages.
+
 # Results
 
 # Discussion
