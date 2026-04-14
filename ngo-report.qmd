@@ -58,6 +58,11 @@ max_year_pop_pop <- gapminder |>
   slice_head(n = 5) 
 ```
 
+```{r}
+#| label: max-year-top-pop-print
+max_year_pop_pop
+```
+
 # Discussion
 
 # References
