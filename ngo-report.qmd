@@ -59,9 +59,9 @@ max_year_pop_pop <- gapminder |>
 ```
 
 ```{r}
-#| label: max-year-top-pop-print
+#| label: tbl-max-year-top-pop
 max_year_pop_pop |> 
-  knitr::kable(caption = "Table 1. Five most populated countries in 2007.")
+  knitr::kable(caption = "Five most populated countries in 2007.")
 ```
 
 # Discussion
