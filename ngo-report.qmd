@@ -47,8 +47,8 @@ carried out with R and tidyverse packages.
 
 # Results
 
-Data about about the five most populated countries in `r max_year` is shown in
-the Table 1.
+Data about about the five most populated countries in is shown in
+@tbl-max-year-top-pop.
 
 ```{r}
 #| label: max-year-top-pop
