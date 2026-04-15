@@ -52,7 +52,7 @@ Data about about the five most populated countries in is shown in
 
 ```{r}
 #| label: max-year-top-pop
-max_year_pop_pop <- gapminder |> 
+max_year_top_pop <- gapminder |> 
   filter(year == max_year) |> 
   arrange(desc(pop)) |> 
   slice_head(n = 5) 
@@ -60,8 +60,25 @@ max_year_pop_pop <- gapminder |>
 
 ```{r}
 #| label: tbl-max-year-top-pop
-max_year_pop_pop |> 
+max_year_top_pop |> 
   knitr::kable(caption = "Five most populated countries in 2007.")
+```
+
+Data about about the five most wealthy countries in is shown in
+@tbl-max-year-top-gdp.
+
+```{r}
+#| label: max-year-top-gdp
+max_year_top_gdp <- gapminder |> 
+  filter(year == max_year) |> 
+  arrange(desc(gdpPercap)) |> 
+  slice_head(n = 5) 
+```
+
+```{r}
+#| label: tbl-max-year-top-gdp
+max_year_top_gdp |> 
+  knitr::kable(caption = "Five most wealthy countries in 2007.")
 ```
 
 # Discussion
