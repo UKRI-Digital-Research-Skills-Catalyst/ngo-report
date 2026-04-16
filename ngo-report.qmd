@@ -60,7 +60,6 @@ max_year_top_pop <- gapminder |>
 
 ::: {#tbl-max-year-top-gdp}
 ```{r}
-#| label: tbl-max-year-top-pop
 max_year_top_pop |> 
   knitr::kable()
 ```
@@ -87,6 +86,34 @@ max_year_top_gdp |>
 
 Five most wealthy countries in `r max_year`.
 :::
+
+The relationship between Gross Domestic Product (GDP) per capita and Life
+Expectancy across countries in `r max_year` is in @fig-gdp-life.
+
+```{r}
+#| label: subset-max-year
+
+# Filter the dataset to the most recent year for our report
+gapminder_max_year <- gapminder |> 
+  filter(year == max_year)
+```
+
+```{r}
+#| label: fig-gdp-life
+
+# Create a bubble chart
+ggplot(gapminder_max_year, aes(x = gdpPercap, 
+                               y = lifeExp, 
+                               color = continent, 
+                               size = pop/10^6)) +
+  geom_point() +
+  scale_size_continuous(name = "Population\n(millions)") +
+  scale_color_discrete(name = NULL) +
+  scale_x_continuous(name = "Gross Domestic Product per capita") +
+  scale_y_continuous(name = "Life Expectancy (years)") +
+  theme_classic()
+
+```
 
 # Discussion
 
