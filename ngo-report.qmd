@@ -58,11 +58,15 @@ max_year_top_pop <- gapminder |>
   slice_head(n = 5) 
 ```
 
+::: {#tbl-max-year-top-gdp}
 ```{r}
 #| label: tbl-max-year-top-pop
 max_year_top_pop |> 
-  knitr::kable(caption = "Five most populated countries in 2007.")
+  knitr::kable()
 ```
+
+Five most populated countries in `r max_year`.
+:::
 
 Data about about the five most wealthy countries in is shown in
 @tbl-max-year-top-gdp.
@@ -75,11 +79,14 @@ max_year_top_gdp <- gapminder |>
   slice_head(n = 5) 
 ```
 
+::: {#tbl-max-year-top-gdp}
 ```{r}
-#| label: tbl-max-year-top-gdp
 max_year_top_gdp |> 
-  knitr::kable(caption = "Five most wealthy countries in 2007.")
+  knitr::kable()
 ```
+
+Five most wealthy countries in `r max_year`.
+:::
 
 # Discussion
 
