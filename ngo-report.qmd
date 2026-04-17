@@ -88,8 +88,8 @@ Five most wealthy countries in `r max_year`.
 :::
 
 The relationship between Gross Domestic Product (GDP) per capita and Life
-Expectancy across countries in `r max_year` is in @fig-gdp-life-max-year and
-that in `r min_year` is in @fig-gdp-life-min-year.
+Expectancy across countries in `r min_year` and `r max_year` is in
+@fig-gdp-life.
 
 ```{r}
 #| label: subset-max-year
@@ -99,8 +99,17 @@ gapminder_max_year <- gapminder |>
   filter(year == max_year)
 ```
 
-::: {#fig-gdp-life-max-year}
 ```{r}
+#| label: subset-min-year
+
+# Filter the dataset to the most recent year for our report
+gapminder_min_year <- gapminder |> 
+  filter(year == min_year)
+```
+
+::: {#fig-gdp-life layout-ncol="2"}
+```{r}
+#| label: fig-gdp-life-max-year
 # Create a bubble chart
 ggplot(gapminder_max_year, aes(x = gdpPercap, 
                                y = lifeExp, 
@@ -115,25 +124,8 @@ ggplot(gapminder_max_year, aes(x = gdpPercap,
 
 ```
 
-**The relationship between Gross Domestic Product (GDP) *per capita* and Life
-Expectancy across countries in `r max_year`.** Each point represents a country,
-plotted by gross domestic product (GDP) *per capita* (international dollars,
-x-axis) against life expectancy at birth in years (y-axis). Point colour
-indicates continental region and point size is proportional to population size
-(millions). Data are from Gapminder and were analysed with R and tidyverse
-packages.
-:::
-
 ```{r}
-#| label: subset-min-year
-
-# Filter the dataset to the most recent year for our report
-gapminder_min_year <- gapminder |> 
-  filter(year == min_year)
-```
-
-::: {#fig-gdp-life-min-year}
-```{r}
+#| label: fig-gdp-life-min-year
 # Create a bubble chart
 ggplot(gapminder_min_year, aes(x = gdpPercap, 
                                y = lifeExp, 
@@ -149,7 +141,8 @@ ggplot(gapminder_min_year, aes(x = gdpPercap,
 ```
 
 **The relationship between Gross Domestic Product (GDP) *per capita* and Life
-Expectancy across countries in `r min_year`.** Each point represents a country,
+Expectancy across countries in `r max_year` (@fig-gdp-life-max-year) and
+`r min_year` (@fig-gdp-life-min-year).** Each point represents a country,
 plotted by gross domestic product (GDP) *per capita* (international dollars,
 x-axis) against life expectancy at birth in years (y-axis). Point colour
 indicates continental region and point size is proportional to population size
