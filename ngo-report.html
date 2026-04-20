@@ -24,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="ngo-report_files/libs/clipboard/clipboard.min.js"></script>
@@ -75,11 +94,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>There is a relationship between wealth and health. We will explore this relationship using the relationship between <a href="https://en.wikipedia.org/wiki/Gross_domestic_product">Gross Domestic Product (GDP)</a> <em>per capita</em> and Life Expectancy across countries and over time.</p>
+<p>There is a relationship between wealth and health <span class="citation" data-cites="pollack_should_2007">(<a href="#ref-pollack_should_2007" role="doc-biblioref">Pollack et al. 2007</a>)</span>. We will explore this relationship using the relationship between <a href="https://en.wikipedia.org/wiki/Gross_domestic_product">Gross Domestic Product (GDP)</a> <em>per capita</em> and Life Expectancy across countries and over time.</p>
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
-<p>We took per capita GDP and life expectancy data from 12 years (from 1952 to 2007) for each of 142 countries. Analysis was carried out with R and tidyverse packages.</p>
+<p>We took per capita GDP and life expectancy data from 12 years (from 1952 to 2007) for each of 142 countries. Analysis was carried out with R <span class="citation" data-cites="R-core">(<a href="#ref-R-core" role="doc-biblioref">R Core Team 2026</a>)</span> and tidyverse <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> packages.</p>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
@@ -263,11 +282,22 @@ Figure&nbsp;1: <strong>The relationship between Gross Domestic Product (GDP) <em
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="references" class="level1 unnumbered">
+
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-pollack_should_2007" class="csl-entry" role="listitem">
+Pollack, Craig Evan, Sekai Chideya, Catherine Cubbin, Brie Williams, Mercedes Dekker, and Paula Braveman. 2007. <span>“Should <span>Health</span> <span>Studies</span> <span>Measure</span> <span>Wealth</span>?: <span>A</span> <span>Systematic</span> <span>Review</span>.”</span> <em>American Journal of Preventive Medicine</em> 33 (3): 250–64. <a href="https://doi.org/10.1016/j.amepre.2007.04.033">https://doi.org/10.1016/j.amepre.2007.04.033</a>.
+</div>
+<div id="ref-R-core" class="csl-entry" role="listitem">
+R Core Team. 2026. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, et al. 2019. <em>Welcome to the <span></span>Tidyverse<span></span></em>. 4: 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

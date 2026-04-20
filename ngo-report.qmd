@@ -10,6 +10,7 @@ execute:
   error: false
   message: false
   warning: false
+bibliography: references.bib
 ---
 
 ```{r}
@@ -19,10 +20,10 @@ library(tidyverse)
 
 # Introduction
 
-There is a relationship between wealth and health. We will explore this
-relationship using the relationship between [Gross Domestic Product
-(GDP)](https://en.wikipedia.org/wiki/Gross_domestic_product) *per capita* and
-Life Expectancy across countries and over time.
+There is a relationship between wealth and health [@pollack_should_2007]. We
+will explore this relationship using the relationship between [Gross Domestic
+Product (GDP)](https://en.wikipedia.org/wiki/Gross_domestic_product) *per
+capita* and Life Expectancy across countries and over time.
 
 ```{r}
 #| label: import-data
@@ -43,7 +44,7 @@ n_counties <- length(unique(gapminder$country))
 
 We took per capita GDP and life expectancy data from `r n_years` years (from
 `r min_year` to `r max_year`) for each of `r n_counties` countries. Analysis was
-carried out with R and tidyverse packages.
+carried out with R [@R-core] and tidyverse [@tidyverse] packages.
 
 # Results
 
