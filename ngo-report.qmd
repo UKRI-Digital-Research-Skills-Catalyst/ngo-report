@@ -3,7 +3,8 @@ title: "The relationship between Gross Domestic Product per capita and Life Expe
 author: "Emma Rand"
 engine: knitr
 format:
-  html
+  # html
+  pdf
 execute:
   echo: false
   include: true
