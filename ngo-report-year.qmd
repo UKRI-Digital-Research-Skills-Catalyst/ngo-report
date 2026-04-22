@@ -1,0 +1,133 @@
+---
+title: "The relationship between Gross Domestic Product per capita and Life Expectancy."
+author: "Emma Rand"
+engine: knitr
+format:
+  html
+  # pdf
+execute:
+  echo: false
+  include: true
+  error: false
+  message: false
+  warning: false
+bibliography: references.bib
+params:
+  year: 2002
+---
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+```
+
+# Introduction
+
+There is a relationship between wealth and health [@pollack_should_2007]. We
+will explore this relationship using the relationship between [Gross Domestic
+Product (GDP)](https://en.wikipedia.org/wiki/Gross_domestic_product) *per
+capita* and Life Expectancy across countries and over time.
+
+```{r}
+#| label: import-data
+file <- "data-raw/gapminder.tsv"
+gapminder <- read_tsv(file)
+```
+
+```{r}
+#| label: extract-summary
+# extract values for inline reporting
+n_years  <- length(unique(gapminder$year))
+min_year <- min(gapminder$year)
+max_year <- min(gapminder$year)
+n_counties <- length(unique(gapminder$country))
+```
+
+# Methods
+
+We took per capita GDP and life expectancy data from `r n_years` years (from
+`r min_year` to `r max_year`) for each of `r n_counties` countries. Analysis was
+carried out with R [@R-core] and tidyverse [@tidyverse] packages. This report is
+for the year `r params$year`.
+
+# Results
+
+Data about about the five most populated countries in is shown in
+@tbl-year-top-pop.
+
+```{r}
+#| label: year-top-pop
+year_top_pop <- gapminder |> 
+  filter(year == params$year) |> 
+  arrange(desc(pop)) |> 
+  slice_head(n = 5) 
+```
+
+::: {#tbl-year-top-pop}
+```{r}
+year_top_pop |> 
+  knitr::kable()
+```
+
+Five most populated countries in `r params$year`.
+:::
+
+Data about about the five most wealthy countries in is shown in
+@tbl-year-top-gdp.
+
+```{r}
+#| label: year-top-gdp
+year_top_gdp <- gapminder |> 
+  filter(year == params$year) |> 
+  arrange(desc(gdpPercap)) |> 
+  slice_head(n = 5) 
+```
+
+::: {#tbl-year-top-gdp}
+```{r}
+year_top_gdp |> 
+  knitr::kable()
+```
+
+Five most wealthy countries in `r params$year`.
+:::
+
+The relationship between Gross Domestic Product (GDP) per capita and Life
+Expectancy across countries in `r params$year` is in @fig-gdp-life.
+
+```{r}
+#| label: subset-year
+
+# Filter the dataset to the report year
+gapminder_year <- gapminder |> 
+  filter(year == params$year)
+```
+
+::: {#fig-gdp-life}
+```{r}
+# Create a bubble chart
+ggplot(gapminder_year, aes(x = gdpPercap, 
+                               y = lifeExp, 
+                               color = continent, 
+                               size = pop/10^6)) +
+  geom_point() +
+  scale_size_continuous(name = "Population\n(millions)") +
+  scale_color_discrete(name = NULL) +
+  scale_x_continuous(name = "Gross Domestic Product per capita") +
+  scale_y_continuous(name = "Life Expectancy (years)") +
+  theme_classic()
+
+```
+
+**The relationship between Gross Domestic Product (GDP) *per capita* and Life
+Expectancy across countries in `r params$year`.** Each point represents a
+country, plotted by gross domestic product (GDP) *per capita* (international
+dollars, x-axis) against life expectancy at birth in years (y-axis). Point
+colour indicates continental region and point size is proportional to population
+size (millions). Data are from Gapminder and were analysed with R and tidyverse
+packages.
+:::
+
+# Discussion
+
+# References
